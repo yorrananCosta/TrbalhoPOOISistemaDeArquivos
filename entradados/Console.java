@@ -1,13 +1,19 @@
 package entradados;
-import java.util.Scanner;
+import java.io.*;
 
+/*
+ * Classe que é usada para ler a classe do console
+ */
 public class Console {
-    private String palavra;
-    private Scanner leitor = new Scanner(System.in);
-
-    public String ler() {
-        System.out.println("Digite um texto: ");
-        palavra = leitor.nextLine();
-        return palavra;
+    
+    public static String ler() {
+        try {
+            BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Digite algo no teclado: ");
+            return leitor.readLine();
+        }
+        catch (IOException error) { 
+            throw new RuntimeException("Erro ao ler o dado do teclado!");
+        }
     }    
 }
