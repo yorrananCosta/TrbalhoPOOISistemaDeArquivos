@@ -10,16 +10,16 @@ public class ClienteApp {
     System.out.println("Digite seu nome: ");
     cliente.setNomeCliente(Console.ler());
     System.out.println("----------------------------------");
-    System.out.println("Olá " + cliente.getNomeCliente() + " :) ");
-    System.out.println("Por favor digite os dez nomes requisitados para esse processo.");
-    System.out.println("Após isso será apresentado os nomes inseridos até aqui");
-    System.out.println("e o processo será encerrado.");
+    System.out.println("Olá " + cliente.getNomeCliente() + " :) \n");
+    System.out.println("Por favor, digite os dez nomes requisitados para este processo.");
+    System.out.println("Aperão apresentados os nomes inseridos até aqui,");
+    System.out.println("e o processo será encerrado.\n");
     int count = 0; 
     while (count < 10) {
       gerenciador.gravarClientes(Console.ler()); 
       count++;
     }
-    System.out.println("Nomes ja inseridos:");
+    System.out.println("\nNomes ja inseridos:");
     gerenciador.lerClientes();
   }
 }
