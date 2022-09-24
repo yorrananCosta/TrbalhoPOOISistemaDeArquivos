@@ -9,7 +9,7 @@ public class Console {
     public static String ler() {
         try {
             BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Digite algo no teclado: ");
+            System.out.println("Esperando digitar... ");
             return leitor.readLine();
         }
         catch (IOException error) { 
