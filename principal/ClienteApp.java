@@ -1,6 +1,7 @@
 import arquivo.GerenciadorClientesArquivo;
-import entradados.*;
+import entradados.Console;
 import cliente.*;
+import excessao.*;
 
 public class ClienteApp {
   public static void main(String[] args) {
@@ -9,6 +10,17 @@ public class ClienteApp {
     System.out.println("--- SISTEMA DE ARQUIVOS GERAIS ---");
     System.out.println("Digite seu nome: ");
     cliente.setNomeCliente(Console.ler());
+    try {
+      if (cliente.getNomeCliente().isEmpty())
+      {
+        throw new ForbiddenWordException();
+      }
+    } catch (ForbiddenWordException exc) {
+      while(cliente.getNomeCliente().isEmpty()) {
+        System.out.println("O nome digitado está vazio, digite novamente:");
+        cliente.setNomeCliente(Console.ler());
+      }
+    }
     System.out.println("----------------------------------");
     System.out.println("Olá " + cliente.getNomeCliente() + " :) \n");
     System.out.println("Por favor, digite os dez nomes requisitados para este processo.");
